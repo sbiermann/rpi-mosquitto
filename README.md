@@ -3,7 +3,7 @@ Raspberry Pi Docker image for eclipse mosquitto MQTT broker based on [toke/docke
 
 ## Run
 
-    docker run -tip 1883:1883 -p 9001:9001 sbiermann/mosquitto
+    docker run -tip 1883:1883 -p 9001:9001 sbiermann/rpi-mosquitto
 
 Exposes Port 1883 (MQTT) 9001 (Websocket MQTT)
 
@@ -24,7 +24,7 @@ persistent and change the configuration.
     -v /srv/mqtt/config:/mqtt/config:ro \
     -v /srv/mqtt/log:/mqtt/log \
     -v /srv/mqtt/data/:/mqtt/data/ \
-    --name mqtt sbiermann/mosquitto
+    --name mqtt sbiermann/rpi-mosquitto
 
 
 Volumes: /mqtt/config, /mqtt/data and /mqtt/log
@@ -32,8 +32,8 @@ Volumes: /mqtt/config, /mqtt/data and /mqtt/log
 
 ## Build
 
-    git clone https://github.com/toke/docker-mosquitto.git
-    cd docker-mosquitto
+    git clone https://github.com/sbiermann/rpi-mosquitto.git
+    cd rpi-mosquitto
     docker build .
 
 
